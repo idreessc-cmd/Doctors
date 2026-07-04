@@ -266,6 +266,23 @@ export default function DoctorDetailPage({ params }: { params: Promise<{ id: str
             )}
           </div>
 
+          {/* Safe Call Info Card */}
+          <div className="card bg-pink-50 border-pink-200">
+            <div className="flex items-center gap-3">
+              <Shield className="w-8 h-8 text-pink-500 shrink-0" />
+              <div>
+                <p className="font-semibold text-pink-700 text-sm">
+                  {locale === 'ar' ? 'خدمة مجانية وآمنة' : 'Free & Safe Service'}
+                </p>
+                <p className="text-xs text-pink-600/80">
+                  {locale === 'ar'
+                    ? 'جميع خدمات المنصة مجانية للمرضى بالكامل. لا تحتاج لدفع أي مبلغ للحجز أو الاستشارة. يتم الدفع مباشرة للعيادة عند الزيارة.'
+                    : 'All platform services are completely free for patients. No payment is required for booking or consultation. Payment is made directly to the clinic upon visit.'}
+                </p>
+              </div>
+            </div>
+          </div>
+
           {(doctor.bio || doctor.bio_ar) && (
             <div className="card">
               <h2 className="text-lg font-semibold text-gray-900 mb-3">
