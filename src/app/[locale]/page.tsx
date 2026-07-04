@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import { Link } from '@/i18n/routing';
+import { Link, useRouter } from '@/i18n/routing';
 import {
   Search, Stethoscope, Building2, Globe, FileText, Users, ChevronDown,
   Star, MapPin, Shield, HeartPulse, UserPlus, Building,
@@ -48,6 +48,7 @@ const faqData = {
 export default function HomePage() {
   const t = useTranslations();
   const locale = useLocale();
+  const router = useRouter();
   const isRtl = locale === 'ar';
   const LeftArrow = isRtl ? ArrowLeft : ArrowRight;
   const RightArrow = isRtl ? ArrowRight : ArrowLeft;
@@ -88,7 +89,7 @@ export default function HomePage() {
     else if (searchType === 'city') params.set('city', searchQuery);
     else if (searchType === 'hospital') params.set('name', searchQuery);
     const basePath = searchType === 'hospital' ? '/hospitals' : '/doctors';
-    window.location.href = `/${locale}${basePath}?${params.toString()}`;
+    router.push(`${basePath}?${params.toString()}`);
   };
 
   const getSearchPlaceholder = () => {

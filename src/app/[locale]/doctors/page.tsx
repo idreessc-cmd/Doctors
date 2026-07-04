@@ -55,7 +55,6 @@ export default function DoctorsPage() {
   const locale = useLocale();
   const searchParams = useSearchParams();
   const router = useRouter();
-  const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
 
   const [doctors, setDoctors] = useState<Doctor[]>([]);
   const [specialties, setSpecialties] = useState<Specialty[]>([]);
