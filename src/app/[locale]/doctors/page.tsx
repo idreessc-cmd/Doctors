@@ -149,7 +149,7 @@ export default function DoctorsPage() {
         result.sort((a, b) => b.ranking_score - a.ranking_score);
         break;
       case 'rating':
-        result.sort((a, b) => (b as any).rating || 0 - (a as any).rating || 0);
+        result.sort((a, b) => ((b as any).rating || 0) - ((a as any).rating || 0));
         break;
       case 'experience':
         result.sort((a, b) => b.years_experience - a.years_experience);

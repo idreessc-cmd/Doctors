@@ -113,7 +113,7 @@ export default function HospitalsPage() {
         result.sort((a, b) => b.ranking_score - a.ranking_score);
         break;
       case 'rating':
-        result.sort((a, b) => (b as any).rating || 0 - (a as any).rating || 0);
+        result.sort((a, b) => ((b as any).rating || 0) - ((a as any).rating || 0));
         break;
       default:
         result.sort((a, b) => b.ranking_score - a.ranking_score);
