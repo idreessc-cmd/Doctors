@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom transitions and premium design touches */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.gold-crown-glow {
+  filter: drop-shadow(0 0 4px rgba(234, 179, 8, 0.4));
+}
